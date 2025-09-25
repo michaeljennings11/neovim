@@ -6,4 +6,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.opt.nu = true
 vim.opt.relativenumber = true
-vim.opt.statuscolumn = "%s %{v:relnum}  %{v:lnum} "
+--vim.opt.statuscolumn = "%s %{v:relnum} %{v:lnum}"
+vim.diagnostic.config({
+  virtual_text = true,
+})
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
